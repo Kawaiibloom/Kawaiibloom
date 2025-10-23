@@ -1,0 +1,604 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Kawaii Bloom — Cute Accessories & Birthstone Jewellery</title>
+<meta name="description" content="Kawaii Bloom — pastel, dreamy keychains and elegant birthstone jewellery. Cute accessories lovingly handmade." />
+<meta name="author" content="Kawaii Bloom" />
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+
+<!-- Favicon placeholder - replace with your own -->
+<link rel="icon" href="favicon.ico" />
+
+<style>
+:root{
+--lavender-100: #F6F3FF;
+--lavender-200: #EDE7FF;
+--lavender-300: #E1D7FF;
+--lavender-400: #CBB7FF;
+--accent: #9B7BFF;
+--muted: #6b6b6b;
+--glass: rgba(255,255,255,0.6);
+--radius: 14px;
+--max-width: 1100px;
+--shadow: 0 8px 30px rgba(67,45,120,0.08);
+}
+
+*{box-sizing: border-box}
+html,body{height:100%}
+body{
+margin:0;
+font-family: 'Poppins', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+color:#312c3a;
+background: linear-gradient(180deg,var(--lavender-100), #fff 40%);
+-webkit-font-smoothing:antialiased;
+-moz-osx-font-smoothing:grayscale;
+line-height:1.45;
+padding-bottom:60px;
+}
+
+.container{
+width: min(96%, var(--max-width));
+margin: 0 auto;
+}
+
+header{
+padding: 28px 0;
+display:flex;
+align-items:center;
+justify-content:space-between;
+}
+
+.brand {
+display:flex;
+gap:14px;
+align-items:center;
+text-decoration:none;
+color:inherit;
+}
+
+.logo {
+width:64px;height:64px;
+border-radius:12px;
+background: linear-gradient(135deg, var(--lavender-300), var(--lavender-400));
+display:flex;
+align-items:center;
+justify-content:center;
+box-shadow: var(--shadow);
+font-family: 'Playfair Display', serif;
+color:white;
+font-weight:600;
+font-size:22px;
+letter-spacing:1px;
+}
+
+.brand h1{
+margin:0;
+font-family: 'Playfair Display', serif;
+font-size:20px;
+line-height:1;
+}
+.tag{
+font-size:13px;color:var(--muted);
+}
+
+nav {
+display:flex;
+gap:18px;
+align-items:center;
+}
+nav a{
+text-decoration:none;color:var(--muted);font-weight:600;font-size:14px;
+}
+
+/* Hero */
+.hero{
+background: linear-gradient(135deg, rgba(255,255,255,0.6), rgba(255,255,255,0.4));
+border-radius: var(--radius);
+margin: 18px 0 34px 0;
+padding: 32px;
+display:grid;
+grid-template-columns: 1fr 360px;
+gap: 24px;
+align-items:center;
+box-shadow: var(--shadow);
+backdrop-filter: blur(6px);
+}
+
+.hero-left h2{
+margin:0 0 8px 0;
+font-family: 'Playfair Display', serif;
+font-size:32px;
+color:#2b2136;
+}
+.hero-left p{margin:0 0 18px 0;color:var(--muted)}
+.cta-row{display:flex;gap:12px;align-items:center}
+.btn{
+display:inline-block;padding:12px 18px;border-radius:12px;text-decoration:none;font-weight:600;
+box-shadow:0 6px 18px rgba(155,123,255,0.14);
+cursor:pointer;
+}
+.btn-primary{background:var(--accent); color:white;}
+.btn-ghost{background:transparent;border:1px solid rgba(155,123,255,0.14); color:var(--accent)}
+
+.hero-right{
+display:flex;
+flex-direction:column;
+gap:12px;
+align-items:center;
+}
+.card-sample{
+width:100%;
+border-radius:12px;
+overflow:hidden;
+box-shadow: 0 10px 26px rgba(67,45,120,0.06);
+background:white;
+padding:12px;
+display:flex;
+gap:12px;
+align-items:center;
+}
+.card-sample img{width:84px;height:84px;object-fit:cover;border-radius:10px}
+.card-sample .meta{flex:1}
+.card-sample .meta h4{margin:0 0 4px 0;font-size:16px}
+.card-sample .meta p{margin:0;color:var(--muted);font-size:13px}
+
+/* Products */
+.section-title{display:flex;justify-content:space-between;align-items:end;margin:28px 0 12px 0}
+.section-title h3{margin:0;font-family:'Playfair Display',serif}
+.grid{
+display:grid;
+gap:18px;
+grid-template-columns: repeat(3, 1fr);
+}
+.product{
+background: white;
+border-radius:12px;
+padding:12px;
+box-shadow:var(--shadow);
+display:flex;
+flex-direction:column;
+gap:10px;
+}
+.product img{width:100%;height:220px;object-fit:cover;border-radius:10px}
+.product .row{display:flex;justify-content:space-between;align-items:center}
+.price{font-weight:700;color:#3b2b63}
+.muted{color:var(--muted);font-size:13px}
+
+footer{
+margin-top:48px;padding:28px 0;color:var(--muted);font-size:14px;border-top:1px dashed rgba(155,123,255,0.12)
+}
+
+/* Responsive */
+@media (max-width: 980px){
+.hero{grid-template-columns: 1fr; padding:20px}
+.grid{grid-template-columns: repeat(2, 1fr)}
+}
+@media (max-width: 640px){
+header{padding:16px 0}
+.grid{grid-template-columns: 1fr}
+.product img{height:200px}
+nav{display:none}
+}
+
+/* Simple cart drawer */
+.cart-drawer{
+position:fixed;
+right:20px;
+bottom:20px;
+width:340px;
+max-width:calc(100% - 40px);
+background:linear-gradient(180deg, white, #fbfbff);
+border-radius:14px;
+box-shadow:0 20px 60px rgba(67,45,120,0.15);
+padding:12px;
+transform: translateY(0);
+z-index:1200;
+}
+.cart-drawer h4{margin:6px 0 8px 0}
+.cart-items{max-height:260px;overflow:auto}
+.cart-item{display:flex;gap:12px;padding:8px 0;border-bottom:1px solid #f2eefc}
+.qty{display:inline-block;padding:6px 8px;border-radius:8px;background:var(--lavender-200);font-weight:600}
+
+.empty {color:var(--muted);text-align:center;padding:18px 0}
+.small{font-size:13px;color:var(--muted)}
+
+/* small utility */
+.pill{font-size:12px;padding:6px 10px;border-radius:999px;background:var(--lavender-200);color:#3b2b63}
+</style>
+</head>
+<body>
+
+<div class="container">
+<header>
+<a class="brand" href="#">
+<div class="logo" aria-hidden="true">KB</div>
+<div>
+<h1>Kawaii Bloom</h1>
+<div class="tag">Soft pastel accessories • Birthstone jewellery</div>
+</div>
+</a>
+
+<nav aria-label="Primary">
+<a href="#shop">Shop</a>
+<a href="#about">About</a>
+<a href="#gallery">Gallery</a>
+<a href="#contact">Contact</a>
+</nav>
+</header>
+
+<main>
+<section class="hero" aria-labelledby="hero-title">
+<div class="hero-left">
+<h2 id="hero-title">Cute. Dreamy. Little luxuries.</h2>
+<p>Handmade pastel keychains and elegant birthstone jewellery — soft, dreamy, and made with love. Perfect for gifts, keepsakes and little joyful moments.</p>
+
+<div class="cta-row">
+<a class="btn btn-primary" href="#shop" id="shop-now">Shop Bestsellers</a>
+<a class="btn btn-ghost" href="#about">Our Story</a>
+<span class="pill" style="margin-left:auto">Free UK shipping over £35</span>
+</div>
+</div>
+
+<aside class="hero-right" aria-hidden="true">
+<div class="card-sample">
+<img src="images/keychain-sample.jpg" alt="Kawaii pastel keychain">
+<div class="meta">
+<h4>Kawaii Keychain — Lavender Bunny</h4>
+<p class="muted">Soft resin charm with silver clip • £9.50</p>
+</div>
+</div>
+
+<div class="card-sample">
+<img src="images/birthstone-sample.jpg" alt="Birthstone necklace">
+<div class="meta">
+<h4>Minimal Birthstone Necklace</h4>
+<p class="muted">Sterling silver • personalised • £22.00</p>
+</div>
+</div>
+</aside>
+</section>
+
+<!-- Shop -->
+<section id="shop" aria-labelledby="shop-title">
+<div class="section-title">
+<h3 id="shop-title">Shop</h3>
+<div class="small">Handmade • UK shipping • Gift-ready</div>
+</div>
+
+<div class="grid" role="list">
+<!-- Product 1 -->
+<article class="product" role="listitem" data-id="k001" data-name="Lavender Bunny Keychain" data-price="9.50">
+<img src="images/keychain-01.jpg" alt="Lavender Bunny Keychain">
+<div>
+<div class="row">
+<div>
+<strong>Lavender Bunny Keychain</strong>
+<div class="muted">Cute bunny resin charm with clasp</div>
+</div>
+<div class="price">£9.50</div>
+</div>
+<div style="margin-top:10px;display:flex;gap:8px">
+<button class="btn btn-primary add-to-cart" aria-label="Add Lavender Bunny Keychain to cart">Add</button>
+<button class="btn btn-ghost" onclick="quickView('k001')">Quick view</button>
+</div>
+</div>
+</article>
+
+<!-- Product 2 -->
+<article class="product" role="listitem" data-id="k002" data-name="Pastel Heart Keychain" data-price="8.00">
+<img src="images/keychain-02.jpg" alt="Pastel Heart Keychain">
+<div>
+<div class="row">
+<div>
+<strong>Pastel Heart Keychain</strong>
+<div class="muted">Pearly finish, delicate colour blend</div>
+</div>
+<div class="price">£8.00</div>
+</div>
+<div style="margin-top:10px;display:flex;gap:8px">
+<button class="btn btn-primary add-to-cart">Add</button>
+<button class="btn btn-ghost" onclick="quickView('k002')">Quick view</button>
+</div>
+</div>
+</article>
+
+<!-- Product 3 -->
+<article class="product" role="listitem" data-id="j001" data-name="Minimal Birthstone Necklace - September (Sapphire)" data-price="22.00">
+<img src="images/birthstone-sep.jpg" alt="September birthstone necklace">
+<div>
+<div class="row">
+<div>
+<strong>Minimal Birthstone Necklace</strong>
+<div class="muted">Sterling silver • choose birthstone</div>
+</div>
+<div class="price">£22.00</div>
+</div>
+
+<div style="margin-top:10px;display:flex;gap:8px">
+<button class="btn btn-primary add-to-cart">Add</button>
+<button class="btn btn-ghost" onclick="quickView('j001')">Quick view</button>
+</div>
+</div>
+</article>
+
+<!-- Product 4 -->
+<article class="product" role="listitem" data-id="j002" data-name="Delicate Birthstone Bracelet" data-price="18.00">
+<img src="images/birthstone-bracelet.jpg" alt="Birthstone bracelet">
+<div>
+<div class="row">
+<div>
+<strong>Delicate Birthstone Bracelet</strong>
+<div class="muted">Adjustable • silver plated</div>
+</div>
+<div class="price">£18.00</div>
+</div>
+
+<div style="margin-top:10px;display:flex;gap:8px">
+<button class="btn btn-primary add-to-cart">Add</button>
+<button class="btn btn-ghost" onclick="quickView('j002')">Quick view</button>
+</div>
+</div>
+</article>
+
+<!-- Product 5 -->
+<article class="product" role="listitem" data-id="k003" data-name="Turtle Charm Keychain" data-price="10.00">
+<img src="images/keychain-03.jpg" alt="Turtle charm keychain">
+<div>
+<div class="row">
+<div>
+<strong>Turtle Charm Keychain</strong>
+<div class="muted">Elisa-approved turtle design</div>
+</div>
+<div class="price">£10.00</div>
+</div>
+<div style="margin-top:10px;display:flex;gap:8px">
+<button class="btn btn-primary add-to-cart">Add</button>
+<button class="btn btn-ghost" onclick="quickView('k003')">Quick view</button>
+</div>
+</div>
+</article>
+
+<!-- Product 6 (placeholder) -->
+<article class="product" role="listitem" data-id="k004" data-name="Custom Charm - Make it Yours" data-price="14.00">
+<img src="images/keychain-04.jpg" alt="Custom charm keychain">
+<div>
+<div class="row">
+<div>
+<strong>Custom Charm</strong>
+<div class="muted">Pick colours & charms — message to order</div>
+</div>
+<div class="price">£14.00</div>
+</div>
+<div style="margin-top:10px;display:flex;gap:8px">
+<button class="btn btn-primary add-to-cart">Add</button>
+<button class="btn btn-ghost" onclick="quickView('k004')">Quick view</button>
+</div>
+</div>
+</article>
+</div>
+</section>
+
+<!-- About -->
+<section id="about" style="margin-top:36px">
+<div class="section-title">
+<h3>About Kawaii Bloom</h3>
+<div class="small">Crafted with care in the UK</div>
+</div>
+<p style="max-width:780px;color:var(--muted)">
+Kawaii Bloom began as a little project to create soft, joyful accessories that feel special. Each keychain and jewellery piece is lovingly handmade with pastel tones and simple, elegant hardware to keep the look grown-up yet cute. Special orders and birthstone customisation are available — perfect for gifts, birthdays and keepsakes.
+</p>
+</section>
+
+<!-- Gallery -->
+<section id="gallery" style="margin-top:28px">
+<div class="section-title">
+<h3>Gallery</h3>
+<div class="small">A little dreamy moodboard</div>
+</div>
+
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px">
+<img src="images/gallery-01.jpg" alt="Kawaii keychains laid out" style="width:100%;border-radius:10px;height:160px;object-fit:cover">
+<img src="images/gallery-02.jpg" alt="Birthstone necklaces" style="width:100%;border-radius:10px;height:160px;object-fit:cover">
+<img src="images/gallery-03.jpg" alt="Packaging & ribbon" style="width:100%;border-radius:10px;height:160px;object-fit:cover">
+</div>
+</section>
+
+<!-- Contact -->
+<section id="contact" style="margin-top:28px">
+<div class="section-title">
+<h3>Contact</h3>
+<div class="small">Questions? Custom orders? Say hello.</div>
+</div>
+
+<div style="display:flex;gap:18px;flex-wrap:wrap">
+<form style="flex:1;min-width:260px;max-width:520px" onsubmit="contactDemo(event)">
+<label class="small">Your name</label><br>
+<input required type="text" id="cname" style="width:100%;padding:10px;border-radius:8px;border:1px solid #efe8ff;margin-bottom:10px">
+
+<label class="small">Email</label><br>
+<input required type="email" id="cemail" style="width:100%;padding:10px;border-radius:8px;border:1px solid #efe8ff;margin-bottom:10px">
+
+<label class="small">Message</label><br>
+<textarea required id="cmessage" rows="4" style="width:100%;padding:10px;border-radius:8px;border:1px solid #efe8ff;margin-bottom:10px"></textarea>
+
+<button class="btn btn-primary" type="submit">Send message</button>
+</form>
+
+<div style="flex:1;min-width:220px">
+<p class="muted">Or email: <a href="mailto:hello@kawaiibloom.co.uk">hello@kawaiibloom.co.uk</a></p>
+<p class="muted">Instagram: <a href="https://instagram.com" target="_blank" rel="noopener">@kawaiibloom</a></p>
+<p class="muted">Handmade in the UK · Orders usually ship in 3–5 working days</p>
+</div>
+</div>
+</section>
+
+<footer>
+<div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;align-items:center">
+<div>
+<strong>Kawaii Bloom</strong>
+<div class="muted">Pastel accessories & birthstone jewellery</div>
+</div>
+
+<div class="small">© <span id="year"></span> Kawaii Bloom — Terms & returns • Privacy</div>
+</div>
+</footer>
+</main>
+</div>
+
+<!-- Cart drawer (simple, client-side) -->
+<div class="cart-drawer" id="cart" aria-live="polite">
+<div style="display:flex;justify-content:space-between;align-items:center">
+<h4>Your basket</h4>
+<div>
+<button class="btn btn-ghost" onclick="clearCart()">Clear</button>
+</div>
+</div>
+
+<div class="cart-items" id="cart-items">
+<div class="empty">Your basket is empty — add something cute </div>
+</div>
+
+<div style="display:flex;justify-content:space-between;align-items:center;margin-top:12px">
+<div class="small">Subtotal</div>
+<div class="small" id="subtotal">£0.00</div>
+</div>
+
+<div style="margin-top:12px;display:flex;gap:10px">
+<button class="btn btn-primary" onclick="checkoutDemo()">Checkout</button>
+<button class="btn btn-ghost" onclick="toggleCart()">Hide</button>
+</div>
+</div>
+
+<script>
+// Basic initialisation
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// Product quick data (if you want to expand later, move to JSON)
+const products = {
+'k001': {id:'k001', name:'Lavender Bunny Keychain', price:9.50, img:'images/keychain-01.jpg'},
+'k002': {id:'k002', name:'Pastel Heart Keychain', price:8.00, img:'images/keychain-02.jpg'},
+'j001': {id:'j001', name:'Minimal Birthstone Necklace', price:22.00, img:'images/birthstone-sep.jpg'},
+'j002': {id:'j002', name:'Delicate Birthstone Bracelet', price:18.00, img:'images/birthstone-bracelet.jpg'},
+'k003': {id:'k003', name:'Turtle Charm Keychain', price:10.00, img:'images/keychain-03.jpg'},
+'k004': {id:'k004', name:'Custom Charm', price:14.00, img:'images/keychain-04.jpg'}
+};
+
+// Simple cart using localStorage
+const CART_KEY = 'kb_cart_v1';
+function getCart(){ try { return JSON.parse(localStorage.getItem(CART_KEY)) || {}; } catch(e){ return {}; } }
+function saveCart(cart){ localStorage.setItem(CART_KEY, JSON.stringify(cart)); renderCart(); }
+
+function addToCart(id, qty=1){
+const cart = getCart();
+cart[id] = (cart[id] || 0) + qty;
+saveCart(cart);
+// small animation: focus cart
+document.getElementById('cart').animate([{transform:'scale(0.98)'},{transform:'scale(1)'}], {duration:200});
+}
+
+// hookup Add buttons
+document.querySelectorAll('.add-to-cart').forEach((btn, idx) => {
+btn.addEventListener('click', (e) => {
+const productEl = e.target.closest('.product');
+const id = productEl?.dataset?.id;
+if(id) addToCart(id);
+});
+});
+
+function renderCart(){
+const cartItemsEl = document.getElementById('cart-items');
+const cart = getCart();
+cartItemsEl.innerHTML = '';
+const ids = Object.keys(cart);
+if(ids.length === 0){
+cartItemsEl.innerHTML = '<div class="empty">Your basket is empty — add something cute </div>';
+document.getElementById('subtotal').textContent = '£0.00';
+return;
+}
+let subtotal = 0;
+ids.forEach(id=>{
+const p = products[id];
+const qty = cart[id];
+if(!p) return;
+subtotal += p.price * qty;
+const div = document.createElement('div');
+div.className = 'cart-item';
+div.innerHTML = `
+<img src="${p.img}" alt="${p.name}" style="width:56px;height:56px;object-fit:cover;border-radius:8px">
+<div style="flex:1">
+<div><strong>${p.name}</strong></div>
+<div class="muted">£${p.price.toFixed(2)} x <span class="qty">${qty}</span></div>
+</div>
+<div style="display:flex;flex-direction:column;gap:6px;align-items:flex-end">
+<button class="btn btn-ghost" onclick="changeQty('${id}',1)">＋</button>
+<button class="btn btn-ghost" onclick="changeQty('${id}',-1)">−</button>
+</div>
+`;
+cartItemsEl.appendChild(div);
+});
+document.getElementById('subtotal').textContent = '£' + subtotal.toFixed(2);
+}
+
+function changeQty(id, delta){
+const cart = getCart();
+cart[id] = (cart[id] || 0) + delta;
+if(cart[id] <= 0) delete cart[id];
+saveCart(cart);
+}
+
+function clearCart(){
+localStorage.removeItem(CART_KEY);
+renderCart();
+}
+
+function checkoutDemo(){
+const cart = getCart();
+const ids = Object.keys(cart);
+if(ids.length === 0){ alert('Your basket is empty. Add something cute first.'); return; }
+// Simulate checkout: open mailto with order summary (simple demo)
+let body = 'Hi Kawaii Bloom,%0D%0A%0D%0AI would like to place an order:%0D%0A';
+let total = 0;
+ids.forEach(id=>{
+const p = products[id];
+const q = cart[id];
+total += p.price * q;
+body += `- ${p.name} x ${q} — £${(p.price * q).toFixed(2)}%0D%0A`;
+});
+body += `%0D%0ASubtotal: £${total.toFixed(2)}%0D%0A%0D%0APlease reply with payment details and shipping cost.%0D%0AThanks!%0D%0A`;
+const mailto = `mailto:hello@kawaiibloom.co.uk?subject=Order%20from%20website&body=${body}`;
+window.location.href = mailto;
+}
+
+function toggleCart(){
+const el = document.getElementById('cart');
+el.style.display = (el.style.display === 'none') ? 'block' : 'none';
+}
+
+// Quick view modal (simple alert for demo)
+function quickView(id){
+const p = products[id];
+if(!p) return alert('Product not found');
+const info = `${p.name}\n£${p.price.toFixed(2)}\n\nDescription: Lovely handmade piece. For custom birthstones, please contact via the contact form.`;
+alert(info);
+}
+
+// Contact demo
+function contactDemo(e){
+e.preventDefault();
+const name = document.getElementById('cname').value.trim();
+const email = document.getElementById('cemail').value.trim();
+const message = document.getElementById('cmessage').value.trim();
+if(!name || !email || !message) return alert('Please complete all fields.');
+const mailto = `mailto:hello@kawaiibloom.co.uk?subject=Contact%20from%20website&body=${encodeURIComponent('Name: '+name+'\nEmail: '+email+'\n\n'+message)}`;
+window.location.href = mailto;
+}
+
+// render on load
+renderCart();
+</script>
+</body>
+</html>
